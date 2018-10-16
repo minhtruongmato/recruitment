@@ -1,0 +1,19 @@
+<?php
+
+namespace App;
+
+use Illuminate\Database\Eloquent\Model;
+
+class Position extends Model
+{
+    protected $table = 'positions';
+
+    protected $fillable = [
+        'title', 'slug', 'created_by', 'updated_by', 'created_at', 'updated_at'
+    ];
+
+    public function CandidatePosition()
+    {
+        return $this->hasMany('App\CandidatePosition');
+    }
+}
